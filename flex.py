@@ -131,12 +131,12 @@ nissa = {
 tagadd = {
     "tagss": False,
     "tags": False,
-    "tag": "วิธีตั้งแทค \n- ตั้งแทค ข้อความที่ต้องการ",
-    "add": "ยินดีที่ได้รู้จักนะครับ 😃\nรับแอดละน้า. >_<",
-    "wctext": "ยินดีต้อนรับเข้ากลุ่มนะครับ 😃",
-    "lv": "บ๊ายบาย >< ขอให้เธอโชคดีงับ >_<",
-    "b": "บัญชีนี้ถูกป้องกันด้วย Self Bot Max ระบบได้บล็อคบัญชีคุณอัตโนมัติ >_<",
-    "m": "สวัสดีครับ ผมมุดลิ้งมานะครับ >_<",
+    "tag": "apasih",
+    "add": "Terimakasi udah add 😃",
+    "wctext": "kam gan😃",
+    "lv": "bye >_<",
+    "b": "aye",
+    "m": "hallo >_<",
 }
 apalo = {
     "blacklist":{},
@@ -472,12 +472,12 @@ def timeChange(secs):
     weeks, days = divmod(days,7)
     months, weeks = divmod(weeks,4)
     text = ""
-    if months != 0: text += "%02d เดือน" % (months)
-    if weeks != 0: text += " %02d สัปดาห์" % (weeks)
-    if days != 0: text += " %02d วัน" % (days)
-    if hours !=  0: text +=  " %02d ชั่วโมง" % (hours)
-    if mins != 0: text += " %02d นาที" % (mins)
-    if secs != 0: text += " %02d วินาที" % (secs)
+    if months != 0: text += "%02d bulan" % (months)
+    if weeks != 0: text += " %02d minggu" % (weeks)
+    if days != 0: text += " %02d hari" % (days)
+    if hours !=  0: text +=  " %02d jam" % (hours)
+    if mins != 0: text += " %02d menit" % (mins)
+    if secs != 0: text += " %02d detik" % (secs)
     if text[0] == " ":
             text = text[1:]
     return text
@@ -555,7 +555,7 @@ def backupData():
 async def maxgieBot(op):
     try:
         if settings["restartPoint"] != None:
-            maxgie.sendMessage(settings["restartPoint"], 'ล็อคอินแล้วเรียบร้อย ><')
+            maxgie.sendMessage(settings["restartPoint"], 'berhasil masuk ><')
             settings["restartPoint"] = None
         if op.type == 0:
             return
@@ -624,7 +624,7 @@ async def maxgieBot(op):
             s = name + " " + tagadd["lv"]
             data = {
                 "type": "flex",
-                "altText": "มีคนออกกลุ่ม",
+                "altText": "bye",
                 "contents": {
                     "type": "bubble",
                     "styles": {
@@ -651,7 +651,7 @@ async def maxgieBot(op):
             sendTemplate(op.param1, data)
             data = {
                 "type": "flex",
-                "altText": "มีคนออกกลุ่ม",
+                "altText": "bye",
                 "contents": {
                     "type": "bubble",
                     "hero": {
@@ -675,7 +675,7 @@ async def maxgieBot(op):
                   a = contact.displayName
                   stk = msg['STKID']
                   spk = msg['STKPKGID']
-                  data={'type':'template','altText': str(a)+' ส่งสติ๊กเกอร์','template':{'type':'image_carousel','columns':[{'imageUrl':'https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png'.format(stk),'action':{'type':'uri','uri':'https://line.me/S/sticker/{}'.format(spk)}}]}}
+                  data={'type':'template','altText': str(a)+' kirim stiker','template':{'type':'image_carousel','columns':[{'imageUrl':'https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png'.format(stk),'action':{'type':'uri','uri':'https://line.me/S/sticker/{}'.format(spk)}}]}}
                   sendTemplate(op.param1, data)
         if op.type == 17:
           if settings["Welcome"] == True:
@@ -687,12 +687,12 @@ async def maxgieBot(op):
             name = contact.displayName
             pp = contact.pictureStatus
             s = "〖 Group Welcome 〗\n"
-            s += "\n• ชื่อกลุ่ม : {}".format(gname)
-            s += "\n• ชื่อคนเข้ากลุ่ม : {}\n\n".format(name)
+            s += "\n• nama grup : {}".format(gname)
+            s += "\n• nama : {}\n\n".format(name)
             s += tagadd["wctext"]
             data = {
                 "type": "flex",
-                "altText": "มีคนเข้ากลุ่ม",
+                "altText": "kam gan",
                 "contents": {
                     "type": "bubble",
                     "styles": {
@@ -720,7 +720,7 @@ async def maxgieBot(op):
             sendTemplate(op.param1, data)
             data = {
                 "type": "flex",
-                "altText": "มีคนเข้ากลุ่ม",
+                "altText": "kam gan",
                 "contents": {
                     "type": "bubble",
                     "hero": {
@@ -747,7 +747,7 @@ async def maxgieBot(op):
             pp = contact.pictureStatus
             data = {
                 "type": "flex",
-                "altText": "มีคนเข้ากลุ่ม",
+                "altText": "kam gan",
                 "contents": {
                     "type": "bubble",
                     'styles': {
@@ -806,7 +806,7 @@ async def maxgieBot(op):
                   a = contact.displayName
                   stk = msg['STKID']
                   spk = msg['STKPKGID']
-                  data={'type':'template','altText': str(a)+' ส่งสติ๊กเกอร์','template':{'type':'image_carousel','columns':[{'imageUrl':'https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png'.format(stk),'action':{'type':'uri','uri':'https://line.me/S/sticker/{}'.format(spk)}}]}}
+                  data={'type':'template','altText': str(a)+' kirim stiker','template':{'type':'image_carousel','columns':[{'imageUrl':'https://stickershop.line-scdn.net/stickershop/v1/sticker/{}/IOS/sticker_animation@2x.png'.format(stk),'action':{'type':'uri','uri':'https://line.me/S/sticker/{}'.format(spk)}}]}}
                   sendTemplate(op.param1, data)
 #=====================================================================
        # if op.type == 26:
@@ -878,7 +878,7 @@ async def maxgieBot(op):
                 if msg._from not in maxgieMID:
                   if apalo["talkban"] == True:
                     if msg._from in apalo["Talkblacklist"]:
-                        maxgie.sendMention(to, "คุณติดดำผมอยู่นะครับ @! :)","",[msg._from])
+                        maxgie.sendMention(to, "aye @! :)","",[msg._from])
                         maxgie.kickoutFromGroup(msg.to, [msg._from])
                 if msg.contentType == 13:
                   if apalo["Talkwblacklist"] == True:
@@ -889,12 +889,12 @@ async def maxgieBot(op):
                       else:
                           apalo["Talkblacklist"][msg.contentMetadata["mid"]] = True
                           apalo["Talkwblacklist"] = False
-                          maxgie.sendMessage(msg.to,"เพิ่มบัญชีนี้ในรายการสีดำเรียบร้อยแล้ว")
+                          maxgie.sendMessage(msg.to,"menambahkan akun ini ke blacklist")
                   if apalo["Talkdblacklist"] == True:
                     if msg._from in admin:
                       if msg.contentMetadata["mid"] in apalo["Talkblacklist"]:
                           del apalo["Talkblacklist"][msg.contentMetadata["mid"]]
-                          maxgie.sendMessage(msg.to,"เพิ่มบัญชีนี้ในรายการสีขาวเรียบร้อยแล้ว")
+                          maxgie.sendMessage(msg.to,"menambahkan ke daftar blacklist")
                           apalo["Talkdblacklist"] = False
                       else:
                           apalo["Talkdblacklist"] = False
@@ -943,7 +943,7 @@ async def maxgieBot(op):
             if msg.contentType == 0:
                 if text is None:
                     return
-                if text.lower() == "ประกาศ":
+                if text.lower() == "HALUCY":
                     sa="วิธีใช้ ประกาศกลุ่ม >\\<"
                     sa+="\n- ประกาศ ข้อความ/ไอดีไลน์"
                     sa+="\nตัวอย่าง >\\<"
