@@ -48,7 +48,7 @@ from six.moves import urllib
 from six.moves import http_client
 import six
 from .TTransport import TTransportBase
-from __future__ import absolute_import
+#from __future__ import absolute_import
 import logging
 import socket
 import struct
